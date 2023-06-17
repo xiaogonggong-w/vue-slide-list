@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="../dist/index.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <slide-list :slideView="slideView" :slideWidth="slideWidth" :slidePaddingLR="slidePaddingLR">
+            <slide-item v-for="(it, index) in hor_nav" :key="index">
+                {{ it }}
+            </slide-item>
+            <!-- <div class="prev-btn" slot="prev"></div>
+        <div class="next-btn" slot="next"></div> -->
+        </slide-list>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    slideView: 2,
+                    slideWidth: 200,
+                    slidePaddingLR: 20,
+                    hor_nav: [
+                        "中共云南省委",
+                        "海南省党政信息中心",
+                        "成都市委“电子政务项目”",
+                        "成都市委“电子政务项目”",
+                    ],
+                };
+            },
+        })
+    </script>
+</body>
+
+</html>
